@@ -919,15 +919,15 @@ void TouchScreenGUI::handleChangedButton(const SEvent &event)
 
 bool TouchScreenGUI::doubleTapDetection()
 {
-	m_key_events[0].down_time = m_key_events[1].down_time;
-	m_key_events[0].x         = m_key_events[1].x;
-	m_key_events[0].y         = m_key_events[1].y;
-	m_key_events[1].down_time = m_move_downtime;
-	m_key_events[1].x         = m_move_downlocation.X;
-	m_key_events[1].y         = m_move_downlocation.Y;
+	m_key_events[0].down_time = m_key_events[0].down_time;
+	m_key_events[0].x         = m_key_events[0].x;
+	m_key_events[0].y         = m_key_events[0].y;
+	m_key_events[0].down_time = m_move_downtime;
+	m_key_events[0].x         = m_move_downlocation.X;
+	m_key_events[0].y         = m_move_downlocation.Y;
 
 	u32 delta = porting::getDeltaMs(m_key_events[0].down_time, getTimeMs());
-	if (delta > 400)
+	if (delta > 600)
 		return false;
 
 	double distance = sqrt(
