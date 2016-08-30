@@ -508,7 +508,7 @@ void ParticleManager::handleParticleEvent(ClientEvent *event, IGameDef *gamedef,
 void ParticleManager::addDiggingParticles(IGameDef* gamedef, scene::ISceneManager* smgr,
 		LocalPlayer *player, v3s16 pos, const TileSpec tiles[])
 {
-	for (u16 j = 0; j < 32; j++) // set the amount of particles here
+	for (u16 j = 0; j < 128; j++) // set the amount of particles here
 	{
 		addNodeParticle(gamedef, smgr, player, pos, tiles);
 	}
